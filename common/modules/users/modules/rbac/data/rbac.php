@@ -6,106 +6,80 @@ return array (
     array (
       'type' => 2,
       'description' => 'Cоздание записи',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'viewPost' => 
     array (
       'type' => 2,
       'description' => 'Просмотр записи',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'updatePost' => 
     array (
       'type' => 2,
       'description' => 'Редактирование записи',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'deletePost' => 
     array (
       'type' => 2,
       'description' => 'Удаление записи',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'createComment' => 
     array (
       'type' => 2,
       'description' => 'Cоздание комментария',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'viewComment' => 
     array (
       'type' => 2,
       'description' => 'Просмотр комментария',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'updateComment' => 
     array (
       'type' => 2,
       'description' => 'Редактирование комментария',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'deleteComment' => 
     array (
       'type' => 2,
       'description' => 'Удаление комментария',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'updateUser' => 
     array (
       'type' => 2,
       'description' => 'Редактирование пользователя',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'deleteUser' => 
     array (
       'type' => 2,
       'description' => 'Удаление пользователя',
-      'ruleName' => NULL,
-      'data' => NULL,
     ),
     'updateOwnPost' => 
     array (
       'type' => 2,
       'description' => 'Редактирование своей записи',
       'ruleName' => 'author',
-      'data' => NULL,
     ),
     'deleteOwnPost' => 
     array (
       'type' => 2,
       'description' => 'Удаление своей записи',
       'ruleName' => 'author',
-      'data' => NULL,
     ),
     'updateOwnComment' => 
     array (
       'type' => 2,
       'description' => 'Редактирование своего комментария',
       'ruleName' => 'author',
-      'data' => NULL,
     ),
     'deleteOwnComment' => 
     array (
       'type' => 2,
       'description' => 'Удаление своего комментария',
       'ruleName' => 'author',
-      'data' => NULL,
     ),
     'guest' => 
     array (
       'type' => 1,
       'description' => 'Гость',
-      'ruleName' => NULL,
-      'data' => NULL,
       'children' => 
       array (
         0 => 'viewPost',
@@ -117,7 +91,6 @@ return array (
       'type' => 1,
       'description' => 'Пользователь',
       'ruleName' => 'notGuestRule',
-      'data' => NULL,
       'children' => 
       array (
         0 => 'guest',
@@ -128,13 +101,18 @@ return array (
         5 => 'updateOwnComment',
         6 => 'deleteOwnComment',
       ),
+      'assignments' => 
+      array (
+        2 => 
+        array (
+          'roleName' => 0,
+        ),
+      ),
     ),
     3 => 
     array (
       'type' => 1,
       'description' => 'Модератор',
-      'ruleName' => NULL,
-      'data' => NULL,
       'children' => 
       array (
         0 => 0,
@@ -148,8 +126,6 @@ return array (
     array (
       'type' => 1,
       'description' => 'Администратор',
-      'ruleName' => NULL,
-      'data' => NULL,
       'children' => 
       array (
         0 => 3,
@@ -159,8 +135,6 @@ return array (
     array (
       'type' => 1,
       'description' => 'Супер-администратор',
-      'ruleName' => NULL,
-      'data' => NULL,
       'children' => 
       array (
         0 => 1,

@@ -1,8 +1,8 @@
 <?php
 return [
 	'app' => [
-	    'siteDomain' => 'http://frontend',
-	    'staticsDomain' => 'http://statics',
+	    'siteDomain' => 'http://my-site.com',
+	    'staticsDomain' => 'http://statics.my-site.com',
 		'adminEmail' => 'admin@my-site.com',
 		'robotEmail' => 'robot@my-site.com',
 		'allowHtmlTags' => 'p,span,strong,ul,ol,li,em,u,strike,br,hr,img,a',
@@ -13,7 +13,7 @@ return [
 		'class' => 'yii\db\Connection',
 		'dsn' => 'mysql:host=127.0.0.1;dbname=yii2start',
 		'username' => 'root',
-		'password' => 'root',
+		'password' => '',
 		'charset' => 'utf8',
 		'tablePrefix' => 'mk3u_'
 	],

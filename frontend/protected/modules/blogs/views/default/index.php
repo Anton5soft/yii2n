@@ -17,18 +17,10 @@ $this->params['page-id'] = 'blogs';
 <div class="page-header clearfix">
     <h1 class="pull-left"><?php echo Html::encode($this->title); ?></h1>
     <?php if (Yii::$app->user->can('createPost')) {
-        Modal::begin([
-            'header' => '<h2>' . Yii::t('blogs', 'Добавить статью') . '</h2>',
-            'toggleButton' => [
-                'label' => Yii::t('blogs', 'Добавить статью'),
-                'class' => 'btn btn-primary pull-right'
-            ]
-        ]);
             echo $this->render('_form', [
                 'model' => $model,
                 'categoryArray' => $categoryArray
             ]);
-        Modal::end();
     } ?>
 </div>
 <div class="row">

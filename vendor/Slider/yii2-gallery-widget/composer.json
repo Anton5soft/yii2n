@@ -1,0 +1,22 @@
+{
+    "name": "Slider/yii2-gallery-widget",
+    "description": "Slider",
+    "keywords": ["yii", "extension", "widget", "gallery"],
+    "type": "yii2-extension",
+    "license": "Slider",
+    "authors": [
+        {
+            "name": "Slider",
+            "email": "Slider",
+            "homepage": "Slider"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slider\\gallery\\": ""
+        }
+    }
+}

@@ -119,16 +119,26 @@ class DefaultController extends Controller
 	 * Создаём новую запись.
 	 * В случае успеха, пользователь будет перенаправлен на view метод.
 	 */
-	public function actionCreate()
-	{
-		$model = new Post(['scenario' => 'create']);
-		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			return $this->redirect(['view', 'id' => $model['id'], 'alias' => $model['alias']]);
-		} else {
-			Yii::$app->response->format = Response::FORMAT_JSON;
-			return ActiveForm::validate($model);
-		}
-	}
+
+    public function actionCreate()
+    {
+        $model = new Post(['scenario' => 'create']);
+        $statusArray = Post::getStatusArray();
+        $categoryArray = Category::getCategoryArray();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model['id']]);
+        } elseif (Yii::$app->request->isAjax) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+                'statusArray' => $statusArray,
+                'categoryArray' => $categoryArray,
+            ]);
+        }
+    }
 
 	/**
 	 * Обновление модели.
